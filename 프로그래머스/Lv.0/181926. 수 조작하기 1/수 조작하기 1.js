@@ -15,3 +15,12 @@ function solution(n, control) {
     }, n);
     return result;
 }
+
+// 다른 사람 풀이
+// 로직 분리 굿, split() 말고 [...control]도 좋은 듯 bb
+function solution(n, control) {
+    return [...control].map(x => setValue(x)).reduce((a, b) => a+b, n);
+}
+function setValue(s){
+    return s==="w" ? 1 : s==="s" ? -1 : s==="d" ? 10 : -10;
+}
