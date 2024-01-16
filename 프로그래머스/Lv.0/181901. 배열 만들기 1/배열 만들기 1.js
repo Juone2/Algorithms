@@ -7,3 +7,13 @@ function solution(n, k) {
   }
   return result;
 }
+
+// 다른 사람 풀이
+// i의 초기 값을 k로 두고 i+=k 하는 방법도 있다~
+function solution(n, k) {
+    var answer = [];
+    for(let i = k ; i <= n; i+=k){
+        answer.push(i)
+    }
+    return answer;
+}
