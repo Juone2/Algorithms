@@ -1,3 +1,4 @@
+// 선택 정렬
 const SelectSorted = (arr) => {
     for (let i = 0; i < arr.length; i++) {
         let minIndex = i;
