@@ -25,6 +25,31 @@ const solution = (array, commands) => {
     return result;
 }
 
+// 삽입 정렬
+const insertionSort = (arr) => {
+  for (let i = 1; i < arr.length; i++) {
+    let temp = arr[i];
+    let j = 0;
+    for (j = i - 1; j >= 0 && arr[j] > temp; j--) {
+      arr[j + 1] = arr[j];
+    }
+    arr[j + 1] = temp;
+  }
+  return arr;
+}
+
+const solution = (array, commands) => {
+  const result = [];
+
+  for (let i = 0; i < commands.length; i++) {
+    const [start, end, k] = commands[i];
+    const sorted = insertionSort(array.slice(start - 1, end));
+    result.push(sorted[k - 1]);
+  }
+
+  return result;
+};
+
 // 메서드 풀이
 
 function solution(array, commands) {
