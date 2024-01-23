@@ -50,8 +50,33 @@ const solution = (array, commands) => {
   return result;
 };
 
-// 메서드 풀이
+// 버블 정렬
+const BubbleSort = (arr) => {
+  for (let i in arr) {
+    for (let j = 0; j < arr.length - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
 
+const solution = (array, commands) => {
+  const result = [];
+
+  for (let i = 0; i < commands.length; i++) {
+    const [start, end, k] = commands[i];
+    const sorted = BubbleSort(array.slice(start - 1, end));
+    result.push(sorted[k - 1]);
+  }
+
+  return result;
+};
+
+// 메서드 풀이
 function solution(array, commands) {
     let answer = [];
     commands.forEach(command => {
